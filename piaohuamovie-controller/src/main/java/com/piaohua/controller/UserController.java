@@ -51,6 +51,7 @@ public class UserController {
     @RequestMapping("/{page}")
     public String page(@PathVariable String page) {
         System.out.println("as");
+        System.out.println("fenzhia");
         return page;
     }
 
