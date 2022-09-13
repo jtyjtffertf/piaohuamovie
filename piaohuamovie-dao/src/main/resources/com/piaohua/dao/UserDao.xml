@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaohua.dao.UserDao">
+
+    <!--User logincheck(User user);-->
+    <select id="logincheck" parameterType="User" resultType="User">
+        select * from user
+        <where>
+            <if test="username != null and username != ''">
+                and username = #{username}
+            </if>
+            <if test="password != null and password != ''">
+                and password = #{password}
+            </if>
+        </where>
+    </select>
+
+
+    <!--void addUser(User user);-->
+    <insert id="addUser" parameterType="User">
+        insert into user values(null,#{username},#{password})
+    </insert>
+
+
+
+
+
+    <select id="findAll" resultType="User">
+        select * from user
+    </select>
+    <update id="addUserr">
+        insert into user values
+            ( #{id}, #{username}, #{password});
+    </update>
+    <update id="deleteById">
+        delete from user where id=#{id}
+    </update>
+    <select id="findById" resultType="User">
+        select * from user where id=#{id}
+    </select>
+    <update id="updateById">
+
+        UPDATE USER SET username = #{username},PASSWORD=#{password}
+        WHERE id = #{id}
+
+    </update>
+
+
+
+
+</mapper>
