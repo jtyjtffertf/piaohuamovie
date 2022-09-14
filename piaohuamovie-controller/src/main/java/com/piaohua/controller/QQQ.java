@@ -11,5 +11,6 @@ public class QQQ {
         System.out.println("这是master1分支");
         System.out.println("呜呼呼");
 
+        System.out.println("push");
     }
 }
