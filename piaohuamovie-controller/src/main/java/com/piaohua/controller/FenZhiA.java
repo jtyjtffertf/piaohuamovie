@@ -6,4 +6,7 @@ public class FenZhiA {
         System.out.println("777");
         System.out.println("fenzhia");
     }
+    public void push(){
+        System.out.println("push");
+    }
 }
